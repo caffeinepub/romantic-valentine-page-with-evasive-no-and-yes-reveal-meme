@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Interactive romantic-themed Valentine web page (HTML/CSS/JS) with Yes/No choice where No evades hover, and Yes reveals a meme image/message; designed to run in Chrome on iPad.",
+  "architectural_notes": [
+    "Single-page static site (HTML/CSS/JS) intended to run locally in Chrome on iPad"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Meme-style romantic graphic with bold top/bottom caption reading “I KNEW YOU WOULD SAY YES AND CHOOSE ME ANYDAY OVER ANYONE” in high-contrast lettering on a pink/white themed background (valentine-meme.dim_1200x800.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-romantic-valentine-web-experience-that-asks-will-you-be-my-valentine-with-two-prominent-options-yes-and-no-using-a-pink-and-white-romantic-theme-and-responsive-layout-suitable-for-ipad-chrome",
+      "title": "Create a single-page romantic Valentine web experience that asks: “Will you be my Valentine?” with two prominent options: “Yes” and “No”, using a pink-and-white romantic theme and responsive layout suitable for iPad Chrome.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-interaction-where-the-no-button-evades-the-user-so-it-cannot-be-clicked-when-the-pointer-hovers-over-or-approaches-the-no-button-pointerenter-mouseover-it-moves-to-a-new-position-on-the-screen-within-the-visible-container-also-handle-touch-interactions-on-ipad-pointerdown-touchstart-by-moving-the-button-before-it-can-be-tapped",
+      "title": "Implement an interaction where the “No” button evades the user so it cannot be clicked: when the pointer hovers over or approaches the “No” button (pointerenter/mouseover), it moves to a new position on the screen within the visible container; also handle touch interactions on iPad (pointerdown/touchstart) by moving the button before it can be tapped.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-when-the-user-clicks-yes-replace-the-choice-ui-with-a-celebratory-reveal-that-displays-a-meme-image-and-the-exact-message-i-knew-you-would-say-yes-and-choose-me-anyday-over-anyone",
+      "title": "When the user clicks “Yes”, replace the choice UI with a celebratory reveal that displays a meme image and the exact message: “I KNEW YOU WOULD SAY YES AND CHOOSE ME ANYDAY OVER ANYONE”.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-required-generated-meme-image-to-the-frontend-as-a-static-asset-under-frontend-public-assets-generated-and-render-it-directly-from-the-frontend-no-backend-image-routing",
+      "title": "Add the required generated meme image to the frontend as a static asset under frontend/public/assets/generated and render it directly from the frontend (no backend image routing).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a simple romantic Valentine proposal webpage (HTML/CSS/JS) runnable in iPad Chrome",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add Yes/No options where the No button moves away on hover to prevent clicking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "On Yes click, display a meme image with the message \"I KNEW YOU WOULD SAY YES AND CHOOSE ME ANYDAY OVER ANYONE\"",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Apply romantic pink and white color scheme and overall romantic styling",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic Valentine page with evasive “No” and “Yes” reveal meme",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

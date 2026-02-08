@@ -1,0 +1,80 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-romantic-valentine-web-experience-that-asks-will-you-be-my-valentine-with-two-prominent-options-yes-and-no-using-a-pink-and-white-romantic-theme-and-responsive-layout-suitable-for-ipad-chrome",
+      "featureTitle": "Create a single-page romantic Valentine web experience that asks: “Will you be my Valentine?” with two prominent options: “Yes” and “No”, using a pink-and-white romantic theme and responsive layout suitable for iPad Chrome.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/features/valentine/ValentinePage.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-an-interaction-where-the-no-button-evades-the-user-so-it-cannot-be-clicked-when-the-pointer-hovers-over-or-approaches-the-no-button-pointerenter-mouseover-it-moves-to-a-new-position-on-the-screen-within-the-visible-container-also-handle-touch-interactions-on-ipad-pointerdown-touchstart-by-moving-the-button-before-it-can-be-tapped",
+      "featureTitle": "Implement an interaction where the “No” button evades the user so it cannot be clicked: when the pointer hovers over or approaches the “No” button (pointerenter/mouseover), it moves to a new position on the screen within the visible container; also handle touch interactions on iPad (pointerdown/touchstart) by moving the button before it can be tapped.",
+      "files": [
+        "frontend/src/features/valentine/ValentinePage.tsx",
+        "frontend/src/features/valentine/useEvasiveNoButton.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-when-the-user-clicks-yes-replace-the-choice-ui-with-a-celebratory-reveal-that-displays-a-meme-image-and-the-exact-message-i-knew-you-would-say-yes-and-choose-me-anyday-over-anyone",
+      "featureTitle": "When the user clicks “Yes”, replace the choice UI with a celebratory reveal that displays a meme image and the exact message: “I KNEW YOU WOULD SAY YES AND CHOOSE ME ANYDAY OVER ANYONE”.",
+      "files": [
+        "frontend/src/features/valentine/ValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-required-generated-meme-image-to-the-frontend-as-a-static-asset-under-frontend-public-assets-generated-and-render-it-directly-from-the-frontend-no-backend-image-routing",
+      "featureTitle": "Add the required generated meme image to the frontend as a static asset under frontend/public/assets/generated and render it directly from the frontend (no backend image routing).",
+      "files": [
+        "frontend/src/features/valentine/ValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Valentine single-page prompt with evasive “No” and “Yes” meme reveal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a single-page Valentine prompt UI with a pink-and-white romantic theme and responsive iPad-friendly layout.",
+      "acceptanceCriteria": [
+        "The page shows a clear Valentine prompt (“Will you be my Valentine?”) and two buttons labeled “Yes” and “No”.",
+        "The visual theme uses a coherent pink-and-white romantic style (background, typography, button styling) across the whole page.",
+        "Layout is responsive and usable on iPad Chrome in both portrait and landscape (no clipped buttons/text, no horizontal scroll)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the single-page App shell that renders the Valentine experience (no additional routes/pages). Use shadcn-ui (e.g., Button) for consistent, prominent CTAs if available; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/valentine/ValentinePage.tsx",
+          "operation": "create",
+          "description": "Implement the main Valentine prompt layout with romantic pink/white styling, centered content, and responsive spacing suitable for iPad Chrome. Use shadcn-ui primitives where appropriate (e.g., Button) without modifying frontend/src/components/ui; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global theme styling (pink/white background, typography defaults, safe-area padding, and responsive constraints) while keeping the app simple and single-purpose."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Make the “No” button evade hover/approach and touch attempts by moving within a visible container so it’s not practically clickable.",
+      "acceptanceCriteria": [
+        "Attempting to hover over the “No” button causes it to move away to a new position.",
+        "On touch devices (iPad), attempting to tap the “No” button causes it to move away before a click/tap is registered.",
+        "The “No” button stays fully within the viewport/container (not partially off-screen) after moving.",
+        "The “No” button is not practically clickable during normal interaction (no stable hover/click state)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/valentine/useEvasiveNoButton.ts",
+          "operation": "create",
+          "description": "Create a hook to manage evasive positioning logic (container bounds measurement, randomized safe positions, and event handlers for pointerenter/mouseover and pointerdown/touchstart) to keep the “No” button fully visible and hard to tap/click."
+        },
+        {
+          "path": "frontend/src/features/valentine/ValentinePage.tsx",
+          "operation": "modify",
+          "description": "Wire the evasive behavior to the “No” button using the hook, ensuring it repositions within the visible container on hover/approach and on touch/pointer down before any click can register."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "On “Yes” click, switch the single page into a celebratory reveal showing the meme image and the exact message text.",
+      "acceptanceCriteria": [
+        "Clicking “Yes” hides/disables the “Yes/No” buttons so the user can’t keep interacting with them.",
+        "A meme image is displayed along with the exact message text: “I KNEW YOU WOULD SAY YES AND CHOOSE ME ANYDAY OVER ANYONE”.",
+        "The reveal view remains within the same single page (no navigation required)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/valentine/ValentinePage.tsx",
+          "operation": "modify",
+          "description": "Add internal UI state to swap from the prompt UI to the reveal UI on “Yes” click; ensure the choice UI is removed/disabled and the reveal renders the exact required message text and the meme image."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add the required generated meme image as a static frontend asset and render it from the reveal state without any backend involvement.",
+      "acceptanceCriteria": [
+        "The generated image file exists under frontend/public/assets/generated with the exact filename specified in imageRequirements.required.",
+        "The frontend loads the image via a static path and displays it on the “Yes” reveal state.",
+        "No backend canister endpoints are added for image hosting/serving."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/valentine-meme.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the required generated static image asset at the exact path frontend/public/assets/generated/valentine-meme.dim_1200x800.png."
+        },
+        {
+          "path": "frontend/src/features/valentine/ValentinePage.tsx",
+          "operation": "modify",
+          "description": "Render the static image from frontend/public/assets/generated/valentine-meme.dim_1200x800.png in the “Yes” reveal UI (direct static asset load; no backend routing)."
+        }
+      ]
+    }
+  ]
+}

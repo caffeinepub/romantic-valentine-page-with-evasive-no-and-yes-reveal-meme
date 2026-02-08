@@ -1,0 +1,7 @@
+{
+  "frontend/src/App.tsx": "Main application entry point that renders the ValentinePage component as the single-page experience.",
+  "frontend/src/features/valentine/ValentinePage.tsx": "Complete Valentine's Day proposal page with romantic pink/white theme, evasive \"No\" button that moves on hover/touch, \"Yes\" button that reveals celebration message and meme image, decorative floating hearts, and responsive iPad-friendly layout.",
+  "frontend/src/features/valentine/useEvasiveNoButton.ts": "Custom React hook that manages the evasive positioning logic for the \"No\" button, calculating random safe positions within container bounds and handling pointer/mouse/touch events to move the button before it can be clicked.",
+  "frontend/src/index.css": "Global styles with romantic pink and white OKLCH color system for both light and dark modes, custom romantic color utilities, and floating heart animations.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with romantic color palette tokens mapped to CSS variables for consistent theming throughout the application."
+}

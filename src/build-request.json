@@ -1,0 +1,109 @@
+{
+  "kind": "build_request",
+  "title": "Romantic Valentine page with evasive “No” and “Yes” reveal meme",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page romantic Valentine web experience that asks: “Will you be my Valentine?” with two prominent options: “Yes” and “No”, using a pink-and-white romantic theme and responsive layout suitable for iPad Chrome.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create an interactive web page as a surprise for my girlfriend... ask her to be my Valentine.",
+          "The page should be themed romantically with a pink and white color scheme and be fully interactive... run it on my iPad using Chrome."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The page shows a clear Valentine prompt (“Will you be my Valentine?”) and two buttons labeled “Yes” and “No”.",
+        "The visual theme uses a coherent pink-and-white romantic style (background, typography, button styling) across the whole page.",
+        "Layout is responsive and usable on iPad Chrome in both portrait and landscape (no clipped buttons/text, no horizontal scroll)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement an interaction where the “No” button evades the user so it cannot be clicked: when the pointer hovers over or approaches the “No” button (pointerenter/mouseover), it moves to a new position on the screen within the visible container; also handle touch interactions on iPad (pointerdown/touchstart) by moving the button before it can be tapped.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "When she hovers her cursor over No, it should move away so she cannot click it, forcing her to click only on Yes."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Attempting to hover over the “No” button causes it to move away to a new position.",
+        "On touch devices (iPad), attempting to tap the “No” button causes it to move away before a click/tap is registered.",
+        "The “No” button stays fully within the viewport/container (not partially off-screen) after moving.",
+        "The “No” button is not practically clickable during normal interaction (no stable hover/click state)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "When the user clicks “Yes”, replace the choice UI with a celebratory reveal that displays a meme image and the exact message: “I KNEW YOU WOULD SAY YES AND CHOOSE ME ANYDAY OVER ANYONE”.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "When she clicks Yes, show her a meme image telling her \"I KNEW YOU WOULD SAY YES AND CHOOSE ME ANYDAY OVER ANYONE\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking “Yes” hides/disables the “Yes/No” buttons so the user can’t keep interacting with them.",
+        "A meme image is displayed along with the exact message text: “I KNEW YOU WOULD SAY YES AND CHOOSE ME ANYDAY OVER ANYONE”.",
+        "The reveal view remains within the same single page (no navigation required)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add the required generated meme image to the frontend as a static asset under frontend/public/assets/generated and render it directly from the frontend (no backend image routing).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "show her a meme image telling her \"I KNEW YOU WOULD SAY YES AND CHOOSE ME ANYDAY OVER ANYONE\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "The generated image file exists under frontend/public/assets/generated with the exact filename specified in imageRequirements.required.",
+        "The frontend loads the image via a static path and displays it on the “Yes” reveal state.",
+        "No backend canister endpoints are added for image hosting/serving."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend must not modify files under frontend/src/components/ui or any paths listed as immutable (frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx).",
+    "Use English for all user-facing text.",
+    "Keep the app single-page and simple, with the only purpose being to ask the Valentine question and show the “Yes” reveal.",
+    "Do not add third-party auth or external integrations; Internet Identity is the only supported auth (but is not required for this feature)."
+  ],
+  "nonGoals": [
+    "User accounts, login, or persistence of responses.",
+    "Backend/canister state or APIs for storing the answer.",
+    "Real-time/multiplayer features, messaging, email, or notifications.",
+    "Additional pages beyond the Valentine prompt and the “Yes” reveal state."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Meme-style romantic graphic with bold top/bottom caption reading “I KNEW YOU WOULD SAY YES AND CHOOSE ME ANYDAY OVER ANYONE” in high-contrast lettering on a pink/white themed background (valentine-meme.dim_1200x800.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

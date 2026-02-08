@@ -1,0 +1,16 @@
+{
+  "backend/main.mo": "Empty Motoko actor placeholder with no implemented methods.",
+  "feature_evidence.json": "Metadata file describing implemented Valentine features, associated source files, and test IDs.",
+  "frontend-file-summaries.txt": "Reference file listing short summaries for major frontend components and configuration files.",
+  "frontend/index.css": "Tailwind base and theme variable definitions for general UI styling with light and dark modes.",
+  "frontend/index.html": "HTML entry point that mounts the React app and loads main.tsx.",
+  "frontend/src/App.tsx": "Root React component rendering the ValentinePage.",
+  "frontend/src/features/valentine/useEvasiveNoButton.ts": "Hook computing random safe positions and applying transform-based movement for the No button on interaction.",
+  "frontend/src/features/valentine/ValentinePage.tsx": "Main Valentine UI with evasive No button, Yes button reveal, floating hearts, and celebratory meme view.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and manages an authenticated or anonymous backend actor with identity-aware caching.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context and hooks for managing Internet Identity login, logout, and identity persistence.",
+  "frontend/src/index.css": "Global Tailwind styles defining romantic-themed OKLCH colors, dark mode variants, and utility classes.",
+  "frontend/src/main.tsx": "Bootstraps the React app, wrapping it with React Query and Internet Identity providers before rendering App.",
+  "frontend/tailwind.config.js": "Defines Tailwind configuration with custom colors, themes, animations, and plugin integrations for styling.",
+  "project_state.json": "Stores the project’s state, feature definitions, requirements, and metadata for the romantic Valentine webpage."
+}
